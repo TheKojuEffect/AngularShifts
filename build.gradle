@@ -1,0 +1,16 @@
+subprojects {
+    apply plugin: "java"
+}
+
+project(":api") {
+    dependencies {
+        implementation(project(":ui"))
+    }
+    build.dependsOn ":ui:build"
+}
+
+project(":ui") {
+    jar {
+        from "dist/ui" into "static"
+    }
+}
