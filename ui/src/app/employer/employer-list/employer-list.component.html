@@ -1,8 +1,10 @@
-<p>
-  employer-list works!
-</p>
-<ul>
-  <li *ngFor="let employer of employers$ | async">
-    {{employer.name}}
-  </li>
-</ul>
+<table mat-table [dataSource]="employers$ | async" class="mat-elevation-z8">
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name</th>
+    <td mat-cell *matCellDef="let employer"> {{employer.name}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

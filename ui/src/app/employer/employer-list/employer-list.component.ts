@@ -11,6 +11,7 @@ import { Employer } from '../employer';
 export class EmployerListComponent implements OnInit {
 
   employers$: Observable<Employer[]>;
+  displayedColumns: string[] = ['name'];
 
   constructor(
     private employerService: EmployerService
