@@ -1,10 +1,15 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { EmployerListComponent } from './employer/employer-list/employer-list.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  {path: '', redirectTo: '/employers', pathMatch: 'full'},
+  {path: 'employers', component: EmployerListComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}
