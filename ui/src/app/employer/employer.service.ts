@@ -18,4 +18,8 @@ export class EmployerService {
   getEmployers(): Observable<Employer[]> {
     return this.http.get<Employer[]>(this.employersUrl);
   }
+
+  save(employer: Employer): Observable<Employer> {
+    return this.http.post<Employer>(this.employersUrl, employer);
+  }
 }

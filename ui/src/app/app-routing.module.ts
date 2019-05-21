@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EmployerListComponent } from './employer/employer-list/employer-list.component';
+import { employerRoutes } from './employer/employer.route';
 
 const routes: Routes = [
   {path: '', redirectTo: '/employers', pathMatch: 'full'},
-  {path: 'employers', component: EmployerListComponent}
+  ...employerRoutes
 ];
 
 @NgModule({
